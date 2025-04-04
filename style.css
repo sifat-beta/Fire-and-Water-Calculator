@@ -1,0 +1,123 @@
+/* Basic Reset & Body Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif; /* Sci-fi/Digital font */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Subtle gradient background suggesting water meeting fire */
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); /* Deep Blue -> Red -> Orange */
+    background-size: 400% 400%; /* For animation */
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+
+/* Calculator Container */
+.calculator {
+    width: 340px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    /* Semi-transparent dark background to make elements pop */
+    background-color: rgba(20, 20, 30, 0.8);
+    border: 2px solid #555;
+}
+
+/* Display Styling */
+.display {
+    width: 100%;
+    padding: 20px;
+    font-size: 2.8em; /* Larger font */
+    text-align: right;
+    border: none;
+    background-color: #1c2541; /* Dark blue background */
+    color: #e0fbfc; /* Light cyan text color (watery) */
+    letter-spacing: 2px;
+    /* Add a subtle inner shadow */
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Grid */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px; /* Thin lines between buttons */
+    background-color: #333; /* Grid background color */
+}
+
+/* General Button Styling */
+.btn {
+    padding: 20px;
+    font-size: 1.5em;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    outline: none; /* Remove default outline */
+    color: #fff; /* Default text color */
+}
+
+.btn:active {
+    transform: scale(0.96); /* Press effect */
+}
+
+/* --- Theming --- */
+
+/* Water Theme (Numbers & Decimal) */
+.btn.water {
+    background-color: #0b132b; /* Darker blue */
+    color: #98c1d9; /* Lighter blue text */
+}
+
+.btn.water:hover {
+    background-color: #1f3a6e; /* Slightly lighter blue on hover */
+}
+
+/* Fire Theme (Operators, Clear, Equals) */
+.btn.fire {
+    background-color: #8c1b1b; /* Darker red */
+    color: #ffcc66; /* Orange/Yellow text */
+}
+
+.btn.fire:hover {
+    background-color: #b33a3a; /* Slightly lighter red on hover */
+}
+
+/* Specific Button Styles */
+.btn.clear {
+    background-color: #a0522d; /* Sienna/Brownish Red */
+}
+.btn.clear:hover {
+    background-color: #b86a45;
+}
+
+.btn.equals {
+    background: linear-gradient(45deg, #ff8c00, #dc143c); /* Orange to Crimson gradient */
+    color: white;
+}
+.btn.equals:hover {
+    background: linear-gradient(45deg, #ffae42, #e03d5f); /* Lighter gradient */
+}
+
+/* Layout Adjustments for specific buttons */
+.double-width {
+    grid-column: span 2;
+}
+
+.double-height {
+    grid-row: span 2;
+    /* Align content center vertically if needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

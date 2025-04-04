@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water & Fire Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" class="display" disabled value="0">
+        <div class="buttons">
+            <!-- Row 1: Clear, Operations -->
+            <button class="btn clear double-width fire" data-action="clear">AC</button>
+            <button class="btn operator fire" data-operator="divide">/</button>
+            <button class="btn operator fire" data-operator="multiply">*</button>
+
+            <!-- Row 2: Numbers 7, 8, 9, Subtract -->
+            <button class="btn number water" data-number="7">7</button>
+            <button class="btn number water" data-number="8">8</button>
+            <button class="btn number water" data-number="9">9</button>
+            <button class="btn operator fire" data-operator="subtract">-</button>
+
+            <!-- Row 3: Numbers 4, 5, 6, Add -->
+            <button class="btn number water" data-number="4">4</button>
+            <button class="btn number water" data-number="5">5</button>
+            <button class="btn number water" data-number="6">6</button>
+            <button class="btn operator fire" data-operator="add">+</button>
+
+            <!-- Row 4: Numbers 1, 2, 3, Equals -->
+            <button class="btn number water" data-number="1">1</button>
+            <button class="btn number water" data-number="2">2</button>
+            <button class="btn number water" data-number="3">3</button>
+            <button class="btn equals fire double-height" data-action="calculate">=</button>
+
+            <!-- Row 5: Number 0, Decimal -->
+            <button class="btn number water double-width" data-number="0">0</button>
+            <button class="btn number water" data-action="decimal">.</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
